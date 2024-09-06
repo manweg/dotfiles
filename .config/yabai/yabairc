@@ -32,3 +32,16 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
+
+# Web browsers
+yabai -m rule --add app="^Google Chrome|Firefox|Safari$" space=1
+# Text editors
+yabai -m rule --add app="^(Code|WezTerm)$" space=2
+# Jetbrains apps
+yabai -m rule --add app="^Microsoft Teams|Microsoft Outlook$" space=3
+# # Terminal
+# yabai -m rule --add app="^(Alacritty)$" space=4
+# # Music
+# yabai -m rule --add app="^(Spotify|Amazon Music)$" space=5
+# # Social
+# yabai -m rule --add app="^(Slack|WhatsApp|Microsoft Teams)$" space=6
