@@ -5,7 +5,7 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # padding set to 12px
-yabai -m config top_padding 15
+yabai -m config top_padding 55
 yabai -m config bottom_padding 15
 yabai -m config left_padding 15
 yabai -m config right_padding 15
@@ -46,7 +46,6 @@ yabai -m rule --add app="^Microsoft Teams|Microsoft Outlook$" space=3
 # # Social
 # yabai -m rule --add app="^(Slack|WhatsApp|Microsoft Teams)$" space=6
 #
-# borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
 borders active_color=0xff000000 inactive_color=0xffffffff width=5.0 style=round
 #
 # yabai -m window --border on
