@@ -16,3 +16,4 @@ ln -s $DOTFILES_DIR/.config/sketchybar ~/.config/sketchybar                     
 
 # Weitere Symlinks hier hinzufügen
 ```
+
