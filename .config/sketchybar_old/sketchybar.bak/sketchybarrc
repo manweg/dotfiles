@@ -7,9 +7,9 @@ source "$HOME/GitPrivate/dotfiles/.config/sketchybar/colors.sh" # Loads all defi
 # For a (much) more advanced configuration example see my dotfiles:
 # https://github.com/FelixKratz/dotfiles
 
-PLUGIN_DIR="$HOME/GitPrivate/dotfiles/.config/sketchybar/plugins"
-ITEM_DIR="$HOME/GitPrivate/dotfiles/.config/sketchybar/items"
-CONFIG_DIR="$HOME/GitPrivate/dotfiles/.config/sketchybar"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+ITEM_DIR="$HOME/.config/sketchybar/items"
+CONFIG_DIR="$HOME/.config/sketchybar"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.

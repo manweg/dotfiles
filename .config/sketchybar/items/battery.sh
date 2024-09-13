@@ -1,18 +1,17 @@
-#!/bin/env/bash
-source "$CONFIG_DIR/globalstyles.sh"
-battery=(
-  icon.font.size=16
-  icon.padding_right=0
-  label.font="$FONT:BOLD:14"
-  icon.font.style="Light"
-  update_freq=30
-  popup.align=right                                            
-  script="$PLUGIN_DIR/battery.sh"                              
-  updates=when_shown                                           
-)
+#!/bin/bash
 
-sketchybar                                 \
-  --add item battery right                 \
-  --set battery "${battery[@]}"            \
-  --subscribe battery power_source_change  \
-                      mouse.clicked
+sketchybar --add item battery right \
+           --set battery update_freq=120 \
+                         script="$PLUGIN_DIR/battery.sh" \
+                      icon.color=$BLUE \
+           --subscribe battery system_woke power_source_change
+
+# Add a separator after the RAM usage item
+sketchybar --add item separator_battery right                   \
+           --set separator_battery icon="|"                      \
+                              icon.color=$WHITE              \
+                              icon.padding_left=5            \
+                              icon.padding_right=5           \
+                              label.drawing=off              \
+                              background.drawing=off
+

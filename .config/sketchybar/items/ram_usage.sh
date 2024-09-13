@@ -1,13 +1,13 @@
 #!/bin/bash
 
-sketchybar --add item wifi right \
-           --set wifi update_freq=2 \
-                      icon="wifi:"  \
+sketchybar --add item ram right \
+           --set ram  update_freq=2 \
+                      icon="RAM:"  \
                       icon.color=$BLUE \
-                      script="$PLUGIN_DIR/wifi.sh"
-#
-sketchybar --add item separator_wifi right                   \
-           --set separator_wifi icon="|"                      \
+                      script="$PLUGIN_DIR/ram_usage.sh"
+                      #
+# Add a separator after the RAM usage item
+sketchybar --add item separator_ram right                   \
                               icon.color=$WHITE              \
                               icon.padding_left=5            \
                               icon.padding_right=5           \
