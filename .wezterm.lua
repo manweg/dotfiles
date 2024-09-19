@@ -27,7 +27,7 @@ config.color_scheme = "Chalk (dark) (terminal.sexy)"
 -- Custom keybindings for Option key
 config.keys = {
 	-- Option + Left Arrow
-	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
+	{ key = "LeftArrow",  mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
 	-- Option + Right Arrow
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
 }
