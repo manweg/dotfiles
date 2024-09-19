@@ -32,5 +32,9 @@ config.keys = {
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
 }
 
+-- config to use left option and right option key as meta
+config.send_composed_key_when_left_alt_is_pressed = true
+config.send_composed_key_when_right_alt_is_pressed = true
+
 -- and finally, return the configuration to wezterm
 return config
