@@ -27,7 +27,7 @@ config.color_scheme = "Chalk (dark) (terminal.sexy)"
 -- Custom keybindings for Option key
 config.keys = {
 	-- Option + Left Arrow
-	{ key = "LeftArrow",  mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
+	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
 	-- Option + Right Arrow
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
 }
@@ -35,6 +35,9 @@ config.keys = {
 -- config to use left option and right option key as meta
 config.send_composed_key_when_left_alt_is_pressed = true
 config.send_composed_key_when_right_alt_is_pressed = true
+
+-- dont ask for closing
+config.window_close_confirmation = "NeverPrompt"
 
 -- and finally, return the configuration to wezterm
 return config

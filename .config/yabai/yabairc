@@ -43,7 +43,7 @@ yabai -m rule --add app="^Microsoft Teams|Microsoft Outlook$" space=3
 # # Terminal
 # yabai -m rule --add app="^(Alacritty)$" space=4
 # # Music
-# yabai -m rule --add app="^(Spotify|Amazon Music)$" space=5
+yabai -m rule --add app="^(Spotify|Amazon Music)$" space=5
 # # Social
 # yabai -m rule --add app="^(Slack|WhatsApp|Microsoft Teams)$" space=6
 #
