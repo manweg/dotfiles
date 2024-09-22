@@ -122,8 +122,8 @@ alias kd='kubectl describe'
 alias nhc='cd $HOME/GitWork/num-helm-charts'
 alias nog='cd $HOME/GitWork/num-ops-guide'
 alias dotf='cd $HOME/GitPrivate/dotfiles'
-alias gw='cd $HOME/GitWork'
-alias gp='cd $HOME/GitPrivate'
+alias gitw='cd $HOME/GitWork'
+alias gitp='cd $HOME/GitPrivate'
 
 # Project BAMF alias
 alias omain='cd $HOME/Git/1#ocds-main'
