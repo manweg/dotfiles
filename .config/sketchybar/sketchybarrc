@@ -45,9 +45,6 @@ sketchybar --default icon.font="SF Pro:Semibold:14.0" \
 source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/front_app.sh
 
-# -- Right Side Of Notch Items --
-source $ITEM_DIR/media.sh
-
 # -- Right Side Items --
 source $ITEM_DIR/time.sh
 source $ITEM_DIR/date.sh
@@ -56,6 +53,9 @@ source $ITEM_DIR/volume.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/cpu.sh
 source $ITEM_DIR/ram_usage.sh
+
+# -- Right Side Of Notch Items --
+source $ITEM_DIR/media.sh
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to

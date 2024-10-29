@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 14
+config.font_size = 15
 
 config.enable_tab_bar = false
 
@@ -27,7 +27,7 @@ config.color_scheme = "Chalk (dark) (terminal.sexy)"
 -- Custom keybindings for Option key
 config.keys = {
 	-- Option + Left Arrow
-	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
+	{ key = "LeftArrow",  mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
 	-- Option + Right Arrow
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
 }
