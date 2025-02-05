@@ -110,6 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Neovim as Vim
+alias vim='nvim'
+
 #kubectl
 alias k=kubectl
 alias kw='watch kubectl get pods'
@@ -117,6 +120,10 @@ alias kex='kubectl exec -it'
 alias kns='kubectl config set-context --current --namespace'
 alias kd='kubectl describe'
 # alias ls='colorls'
+
+# Fuzzy find Git Repo
+alias gitf='cd "$(find ~/GitWork -maxdepth 1 -type d | fzf)"'
+alias gitpf='cd "$(find ~/GitPrivate -maxdepth 1 -type d | fzf)"'
 
 # Project Highmed alias
 alias nhc='cd $HOME/GitWork/num-helm-charts'
