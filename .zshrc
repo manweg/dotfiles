@@ -125,20 +125,6 @@ alias kd='kubectl describe'
 alias gitf='cd "$(find ~/GitWork -maxdepth 1 -type d | fzf)"'
 alias gitpf='cd "$(find ~/GitPrivate -maxdepth 1 -type d | fzf)"'
 
-# Project Highmed alias
-alias nhc='cd $HOME/GitWork/num-helm-charts'
-alias nog='cd $HOME/GitWork/num-ops-guide'
-alias dotf='cd $HOME/GitPrivate/dotfiles'
-alias gitw='cd $HOME/GitWork'
-alias gitp='cd $HOME/GitPrivate'
-
-# Project BAMF alias
-alias omain='cd $HOME/Git/1#ocds-main'
-alias ot='cd $HOME/Git/num-ops-guide'
-alias od='cd $HOME/Git/dotfiles'
-alias ofd='cd $HOME/Git/dotfiles'
-alias oi='cd $HOME/Git/dotfiles'
-
 # kubectl autocomplition
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 complete -o default -F __start_kubectl k

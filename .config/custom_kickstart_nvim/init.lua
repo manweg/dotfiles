@@ -1,6 +1,6 @@
 --[[
 
-=====================================================================
+====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
 ========                                    .-----.          ========
@@ -412,6 +412,25 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+      -- Grep in current git dir
+      vim.keymap.set('n', '<leader>sG', function()
+        local git_root = vim.fn.systemlist('git rev-parse --show-toplevel')[1]
+        if vim.v.shell_error ~= 0 then
+          git_root = vim.fn.getcwd() -- Falls kein Git-Repo vorhanden ist, nutze das aktuelle Verzeichnis
+        end
+        require('telescope.builtin').live_grep {
+          search_dirs = { git_root },
+          additional_args = function(_)
+            return { '--hidden' }
+          end,
+        }
+      end, { desc = '[S]earch by [G]rep in Git root (include hidden)' })
+
+      -- Search File with hidden
+      vim.keymap.set('n', '<leader>sF', function()
+        require('telescope.builtin').find_files { hidden = true, no_ignore = true }
+      end, { desc = '[S]earch [F]iles (including hidden)' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
