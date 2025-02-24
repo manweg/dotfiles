@@ -49,5 +49,5 @@ yabai -m rule --add app="^(Spotify|Amazon Music)$" space=5
 # # Social
 # yabai -m rule --add app="^(Slack|WhatsApp|Microsoft Teams)$" space=6
 #
-borders active_color=0xff000000 inactive_color=0xff000000 width=1 style=round
+borders active_color=0xffd7d7d7 inactive_color=0xff000000 width=1 style=round
 

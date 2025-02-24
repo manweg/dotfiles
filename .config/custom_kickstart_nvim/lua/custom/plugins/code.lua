@@ -35,4 +35,21 @@ return {
     -- Add the community repository of plugin specifications
     'towolf/vim-helm',
   },
+  -- lazy.nvim
+  {
+    'm4xshen/hardtime.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    opts = {},
+  },
+  {
+    'OXY2DEV/markview.nvim',
+    lazy = false,
+  },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
+  },
 }
