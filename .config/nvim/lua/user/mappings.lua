@@ -1,7 +1,7 @@
 -- Apps
 vim.keymap.set('n', '<Leader>e', ':Neotree toggle float<CR>', { desc = 'Open Neotree' })
 vim.keymap.set('n', '<Leader>o', ':Ex<Return>', { desc = 'Open Netrw' })
--- vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', { desc = 'Open LazyGit' })
+vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', { desc = 'Open LazyGit' })
 -- Buffer
 vim.keymap.set('n', '<C-n>', ':bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-p>', ':bprev<CR>', { noremap = true, silent = true })
