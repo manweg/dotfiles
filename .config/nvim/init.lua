@@ -995,15 +995,12 @@ require('lazy').setup({
 require 'user.mappings'
 
 -- Open Netrw in Tree Mode
-vim.g.netrw_liststyle = 3
+-- vim.g.netrw_liststyle = 3
 
 vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])  -- Optional für Inaktiv-Fenster
 vim.cmd([[hi LineNr guibg=NONE ctermbg=NONE]])    -- Zeilennummern transparent
 vim.cmd([[hi SignColumn guibg=NONE]])            -- Git/LSP-Symbole transparent
-vim.cmd([[hi NormalFloat guibg=NONE]])
-vim.cmd([[hi FloatBorder guibg=NONE]])
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
