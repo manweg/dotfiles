@@ -42,10 +42,6 @@ return {
     opts = {},
   },
   {
-    'OXY2DEV/markview.nvim',
-    lazy = false,
-  },
-  {
     'numToStr/Comment.nvim',
     opts = {
       ---Add a space b/w comment and the line
@@ -89,6 +85,14 @@ return {
       pre_hook = nil,
       ---Function to call after (un)comment
       post_hook = nil,
+    },
+  },
+  -- Lua
+  {
+    'folke/persistence.nvim',
+    event = 'BufReadPre', -- this will only start session saving when an actual file was opened
+    opts = {
+      -- add any custom options here
     },
   },
 }

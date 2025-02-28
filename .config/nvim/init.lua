@@ -192,6 +192,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'yaml',
+  command = 'setlocal filetype=helm',
+})
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -392,7 +397,7 @@ require('lazy').setup({
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
-         },
+          },
         },
       }
 
@@ -471,6 +476,7 @@ require('lazy').setup({
     },
   },
   {
+
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -698,48 +704,48 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- Autoformat
-  --   'stevearc/conform.nvim',
-  --   event = { 'BufWritePre' },
-  --   cmd = { 'ConformInfo' },
-  --   keys = {
-  --     {
-  --       '<leader>f',
-  --       function()
-  --         require('conform').format { async = true, lsp_format = 'fallback' }
-  --       end,
-  --       mode = '',
-  --       desc = '[F]ormat buffer',
-  --     },
-  --   },
-  --   opts = {
-  --     notify_on_error = false,
-  --     format_on_save = function(bufnr)
-  --       -- Disable "format_on_save lsp_fallback" for languages that don't
-  --       -- have a well standardized coding style. You can add additional
-  --       -- languages here or re-enable it for the disabled ones.
-  --       local disable_filetypes = { c = true, cpp = true }
-  --       local lsp_format_opt
-  --       if disable_filetypes[vim.bo[bufnr].filetype] then
-  --         lsp_format_opt = 'never'
-  --       else
-  --         lsp_format_opt = 'fallback'
-  --       end
-  --       return {
-  --         timeout_ms = 500,
-  --         lsp_format = lsp_format_opt,
-  --       }
-  --     end,
-  --     formatters_by_ft = {
-  --       lua = { 'stylua' },
-  --       -- Conform can also run multiple formatters sequentially
-  --       -- python = { "isort", "black" },
-  --       --
-  --       -- You can use 'stop_after_first' to run the first available formatter from the list
-  --       -- javascript = { "prettierd", "prettier", stop_after_first = true },
-  --     },
-  --   },
-  -- },
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
+    keys = {
+      {
+        '<leader>f',
+        function()
+          require('conform').format { async = true, lsp_format = 'fallback' }
+        end,
+        mode = '',
+        desc = '[F]ormat buffer',
+      },
+    },
+    opts = {
+      notify_on_error = false,
+      format_on_save = function(bufnr)
+        -- Disable "format_on_save lsp_fallback" for languages that don't
+        -- have a well standardized coding style. You can add additional
+        -- languages here or re-enable it for the disabled ones.
+        local disable_filetypes = { c = true, cpp = true }
+        local lsp_format_opt
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          lsp_format_opt = 'never'
+        else
+          lsp_format_opt = 'fallback'
+        end
+        return {
+          timeout_ms = 500,
+          lsp_format = lsp_format_opt,
+        }
+      end,
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        -- Conform can also run multiple formatters sequentially
+        -- python = { "isort", "black" },
+        --
+        -- You can use 'stop_after_first' to run the first available formatter from the list
+        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+    },
+  },
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -862,14 +868,16 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    -- 'folke/tokyonight.nvim',
+    'arcticicestudio/nord-vim',
     transparent = true,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'nord'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -916,13 +924,14 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'helm' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -930,7 +939,7 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        additional_vim_regex_highlighting = { 'ruby', 'yaml', 'helm' },
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
@@ -992,15 +1001,100 @@ require('lazy').setup({
   },
 })
 
+-- Custom Config
 require 'user.mappings'
 
 -- Open Netrw in Tree Mode
 -- vim.g.netrw_liststyle = 3
 
-vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
-vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])  -- Optional für Inaktiv-Fenster
-vim.cmd([[hi LineNr guibg=NONE ctermbg=NONE]])    -- Zeilennummern transparent
-vim.cmd([[hi SignColumn guibg=NONE]])            -- Git/LSP-Symbole transparent
+vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
+vim.cmd [[hi NormalNC guibg=NONE ctermbg=NONE]] -- Optional für Inaktiv-Fenster
+vim.cmd [[hi LineNr guibg=NONE ctermbg=NONE]] -- Zeilennummern transparent
+vim.cmd [[hi SignColumn guibg=NONE]] -- Git/LSP-Symbole transparent
+
+-- Basic Settings
+vim.opt_local.cursorcolumn = true -- Highlight the current column
+vim.opt_local.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
+vim.opt_local.softtabstop = 2 -- Number of spaces that a <Tab> counts for while performing editing operations
+vim.opt_local.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for
+vim.opt_local.expandtab = true -- Expand tab to 2 spaces
+
+-- Helpers
+vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yt', ':YAMLTelescope<CR>', { noremap = false })
+vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yl', ':!yamllint %<CR>', { noremap = true, silent = true })
+
+-- -- Folding
+vim.opt_local.foldmethod = 'indent'
+vim.opt_local.foldlevel = 1
+vim.api.nvim_buf_set_keymap(0, 'n', 'zj', ':lua NavigateFold("j")<CR>', { noremap = true, silent = true })
+vim.api.nvim_buf_set_keymap(0, 'n', 'zk', ':lua NavigateFold("k")<CR>', { noremap = true, silent = true })
+
+-- LSP Configuration
+require('lspconfig').yamlls.setup {
+  settings = {
+    yaml = {
+      schemas = {
+        kubernetes = 'k8s-*.yaml',
+        ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
+        ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
+        ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
+        ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
+        ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
+        ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
+        ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+        ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
+        ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
+        ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
+        ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
+        ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
+      },
+    },
+  },
+}
+
+-- Autocompletion
+local cmp = require 'cmp'
+cmp.setup.buffer {
+  sources = {
+    { name = 'vsnip' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    {
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          local bufs = {}
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            bufs[vim.api.nvim_win_get_buf(win)] = true
+          end
+          return vim.tbl_keys(bufs)
+        end,
+      },
+    },
+  },
+}
+
+-- load the session for the current directory
+vim.keymap.set('n', '<leader>qs', function()
+  require('persistence').load()
+end, { desc = 'Load session of current dir' })
+
+--vim.keymap.set('n', '<s-tab>', ':bprev<CR>', { noremap = true, silent = true, desc = 'Previousbuffer' })
+
+-- select a session to load
+vim.keymap.set('n', '<leader>qS', function()
+  require('persistence').select()
+end, { desc = 'Select session to load' })
+
+-- load the last session
+vim.keymap.set('n', '<leader>ql', function()
+  require('persistence').load { last = true }
+end, { desc = 'Load last session' })
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set('n', '<leader>qd', function()
+  require('persistence').stop()
+end, { desc = 'Stop persistence' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
