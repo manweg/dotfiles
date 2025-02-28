@@ -71,3 +71,9 @@ shift + alt - 7 : yabai -m window --space 7;
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+# Volume up
+ctrl + alt - up : osascript -e "set volume output volume (output volume of (get volume settings) + 10) --100%"
+# Volume down
+ctrl + alt - down : osascript -e "set volume output volume (output volume of (get volume settings) - 10) --100%"
+
