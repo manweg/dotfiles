@@ -868,16 +868,16 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    -- 'folke/tokyonight.nvim',
-    'arcticicestudio/nord-vim',
+    'folke/tokyonight.nvim',
+    -- 'arcticicestudio/nord-vim',
     transparent = true,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-night'
-      vim.cmd.colorscheme 'nord'
+      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'nord'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -1013,7 +1013,7 @@ vim.cmd [[hi LineNr guibg=NONE ctermbg=NONE]] -- Zeilennummern transparent
 vim.cmd [[hi SignColumn guibg=NONE]] -- Git/LSP-Symbole transparent
 
 -- Basic Settings
-vim.opt_local.cursorcolumn = true -- Highlight the current column
+-- vim.opt_local.cursorcolumn = true -- Highlight the current column
 vim.opt_local.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
 vim.opt_local.softtabstop = 2 -- Number of spaces that a <Tab> counts for while performing editing operations
 vim.opt_local.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for
@@ -1023,31 +1023,28 @@ vim.opt_local.expandtab = true -- Expand tab to 2 spaces
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yt', ':YAMLTelescope<CR>', { noremap = false })
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yl', ':!yamllint %<CR>', { noremap = true, silent = true })
 
--- -- Folding
-vim.opt_local.foldmethod = 'indent'
-vim.opt_local.foldlevel = 1
-vim.api.nvim_buf_set_keymap(0, 'n', 'zj', ':lua NavigateFold("j")<CR>', { noremap = true, silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', 'zk', ':lua NavigateFold("k")<CR>', { noremap = true, silent = true })
-
 -- LSP Configuration
 require('lspconfig').yamlls.setup {
   settings = {
     yaml = {
-      schemas = {
-        kubernetes = 'k8s-*.yaml',
-        ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
-        ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
-        ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
-        ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
-        ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
-        ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
-        ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
-        ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
-        ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
-        ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
-        ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
-        ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
+      format = {
+        enable = true, -- Automatische Formatierung aktivieren
       },
+      -- schemas = {
+      --   kubernetes = 'k8s-*.yaml',
+      --   ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
+      --   ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
+      --   ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
+      --   ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
+      --   ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
+      --   ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
+      --   ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+      --   ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
+      --   ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
+      --   ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
+      --   ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
+      --   ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
+      -- },
     },
   },
 }
@@ -1095,6 +1092,13 @@ end, { desc = 'Load last session' })
 vim.keymap.set('n', '<leader>qd', function()
   require('persistence').stop()
 end, { desc = 'Stop persistence' })
+
+-- -- Folding
+vim.wo.foldenable = false
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.api.nvim_buf_set_keymap(0, 'n', 'zj', ':lua NavigateFold("j")<CR>', { noremap = true, silent = true })
+vim.api.nvim_buf_set_keymap(0, 'n', 'zk', ':lua NavigateFold("k")<CR>', { noremap = true, silent = true })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
