@@ -1023,53 +1023,53 @@ vim.opt_local.expandtab = true -- Expand tab to 2 spaces
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yt', ':YAMLTelescope<CR>', { noremap = false })
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yl', ':!yamllint %<CR>', { noremap = true, silent = true })
 
--- LSP Configuration
-require('lspconfig').yamlls.setup {
-  settings = {
-    yaml = {
-      format = {
-        enable = true, -- Automatische Formatierung aktivieren
-      },
-      -- schemas = {
-      --   kubernetes = 'k8s-*.yaml',
-      --   ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
-      --   ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
-      --   ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
-      --   ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
-      --   ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
-      --   ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
-      --   ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
-      --   ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
-      --   ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
-      --   ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
-      --   ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
-      --   ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
-      -- },
-    },
-  },
-}
+-- -- LSP Configuration
+-- require('lspconfig').yamlls.setup {
+--   settings = {
+--     yaml = {
+--       format = {
+--         enable = true, -- Automatische Formatierung aktivieren
+--       },
+--       schemas = {
+--         kubernetes = 'k8s-*.yaml',
+--         ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
+--         ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
+--         ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
+--         ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
+--         ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
+--         ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
+--         ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+--         ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
+--         ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
+--         ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
+--         ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
+--         ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
+--       },
+--     },
+--   },
+-- }
 
--- Autocompletion
-local cmp = require 'cmp'
-cmp.setup.buffer {
-  sources = {
-    { name = 'vsnip' },
-    { name = 'nvim_lsp' },
-    { name = 'path' },
-    {
-      name = 'buffer',
-      option = {
-        get_bufnrs = function()
-          local bufs = {}
-          for _, win in ipairs(vim.api.nvim_list_wins()) do
-            bufs[vim.api.nvim_win_get_buf(win)] = true
-          end
-          return vim.tbl_keys(bufs)
-        end,
-      },
-    },
-  },
-}
+-- -- Autocompletion
+-- local cmp = require 'cmp'
+-- cmp.setup.buffer {
+--   sources = {
+--     { name = 'vsnip' },
+--     { name = 'nvim_lsp' },
+--     { name = 'path' },
+--     {
+--       name = 'buffer',
+--       option = {
+--         get_bufnrs = function()
+--           local bufs = {}
+--           for _, win in ipairs(vim.api.nvim_list_wins()) do
+--             bufs[vim.api.nvim_win_get_buf(win)] = true
+--           end
+--           return vim.tbl_keys(bufs)
+--         end,
+--       },
+--     },
+--   },
+-- }
 
 -- load the session for the current directory
 vim.keymap.set('n', '<leader>qs', function()

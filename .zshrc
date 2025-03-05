@@ -112,6 +112,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Neovim as Vim
 alias vim='nvim'
+alias astronvim='NVIM_APPNAME=astronvim nvim'
+alias kickstart='NVIM_APPNAME=kickstart nvim'
 
 #kubectl
 alias k=kubectl
