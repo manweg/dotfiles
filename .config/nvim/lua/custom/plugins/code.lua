@@ -36,11 +36,11 @@ return {
     'towolf/vim-helm',
   },
   -- lazy.nvim
-  {
-    'm4xshen/hardtime.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    opts = {},
-  },
+  -- {
+  --   'm4xshen/hardtime.nvim',
+  --   dependencies = { 'MunifTanjim/nui.nvim' },
+  --   opts = {},
+  -- },
   {
     'numToStr/Comment.nvim',
     opts = {
