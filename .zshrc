@@ -113,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Neovim as Vim
 alias vim='nvim'
+alias astronvim='NVIM_APPNAME=astronvim nvim'
+alias kickstart='NVIM_APPNAME=kickstart nvim'
 
 #kubectl
 alias k=kubectl
@@ -120,7 +122,7 @@ alias kw='watch kubectl get pods'
 alias kex='kubectl exec -it'
 alias kns='kubectl config set-context --current --namespace'
 alias kd='kubectl describe'
-# alias ls='colorls'
+#alias ls='colorls'
 
 # Fuzzy find Git Repo
 alias gitf='cd "$(find ~/GitWork -maxdepth 1 -type d | fzf)"'
@@ -140,7 +142,12 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-export EDITOR=nvim
 # fzf History mit zsh-vi-mode im Insert-Modus
 bindkey -M viins '^R' fzf-history-widget
 bindkey -M vicmd '^R' fzf-history-widget
+
+# NVIM standard editor for git and shell
+git config --global core.editor "nvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
+
