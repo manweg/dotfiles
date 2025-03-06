@@ -868,7 +868,9 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    -- 'folke/tokyonight.nvim',
+    'EdenEast/nightfox.nvim',
+    -- 'rose-pine/neovim',
     -- 'arcticicestudio/nord-vim',
     transparent = true,
     priority = 1000, -- Make sure to load this before all the other start plugins.
@@ -876,7 +878,9 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'nightfox'
+      -- vim.cmd.colorscheme 'rose-pine'
       -- vim.cmd.colorscheme 'nord'
 
       -- You can configure highlights by doing something like:
@@ -1023,7 +1027,38 @@ vim.opt_local.expandtab = true -- Expand tab to 2 spaces
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yt', ':YAMLTelescope<CR>', { noremap = false })
 vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yl', ':!yamllint %<CR>', { noremap = true, silent = true })
 
--- -- LSP Configuration
+-- LSP Helm
+local lspconfig = require 'lspconfig'
+local Path = require 'plenary.path'
+
+local function is_helm_chart(filepath)
+  local parent = Path:new(filepath):parent()
+  local chart_path = parent:joinpath 'Chart.yaml'
+
+  return chart_path:exists()
+end
+
+lspconfig.yamlls.setup {
+  on_attach = function(client, bufnr)
+    local filepath = vim.api.nvim_buf_get_name(bufnr)
+    if filepath:match '/templates/' and is_helm_chart(filepath) then
+      -- Deaktiviere yamlls für Helm Templates
+      client.stop()
+      return
+    end
+  end,
+  settings = {
+    yaml = {
+      schemaStore = {
+        enable = true,
+        url = 'https://www.schemastore.org/api/json/catalog.json',
+      },
+      validate = true,
+    },
+  },
+}
+
+-- LSP Configuration
 -- require('lspconfig').yamlls.setup {
 --   settings = {
 --     yaml = {
@@ -1038,7 +1073,7 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yl', ':!yamllint %<CR>', { noremap 
 --         ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
 --         ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
 --         ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
---         ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+--         -- ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
 --         ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
 --         ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
 --         ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
@@ -1049,27 +1084,40 @@ vim.api.nvim_buf_set_keymap(0, 'n', '<leader>yl', ':!yamllint %<CR>', { noremap 
 --   },
 -- }
 
--- -- Autocompletion
--- local cmp = require 'cmp'
--- cmp.setup.buffer {
---   sources = {
---     { name = 'vsnip' },
---     { name = 'nvim_lsp' },
---     { name = 'path' },
---     {
---       name = 'buffer',
---       option = {
---         get_bufnrs = function()
---           local bufs = {}
---           for _, win in ipairs(vim.api.nvim_list_wins()) do
---             bufs[vim.api.nvim_win_get_buf(win)] = true
---           end
---           return vim.tbl_keys(bufs)
---         end,
---       },
---     },
---   },
--- }
+require('lspconfig').helm_ls.setup {
+  settings = {
+    yaml = {
+      format = {
+        enable = true, -- Automatische Formatierung aktivieren
+      },
+      schemas = {
+        ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+      },
+    },
+  },
+}
+
+-- Autocompletion
+local cmp = require 'cmp'
+cmp.setup.buffer {
+  sources = {
+    { name = 'vsnip' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    {
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          local bufs = {}
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            bufs[vim.api.nvim_win_get_buf(win)] = true
+          end
+          return vim.tbl_keys(bufs)
+        end,
+      },
+    },
+  },
+}
 
 -- load the session for the current directory
 vim.keymap.set('n', '<leader>qs', function()
