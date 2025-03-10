@@ -81,7 +81,7 @@ ZSH_THEME="garyblessington"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -140,11 +140,13 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# source <(fzf --zsh)
+# Überprüfe, ob die Datei ~/.fzf.zsh existiert und lade sie
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf History mit zsh-vi-mode im Insert-Modus
-bindkey -M viins '^R' fzf-history-widget
-bindkey -M vicmd '^R' fzf-history-widget
+# bindkey -M viins '^R' fzf-history-widget
+# bindkey -M vicmd '^R' fzf-history-widget
 
 # NVIM standard editor for git and shell
 git config --global core.editor "nvim"
