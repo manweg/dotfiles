@@ -1011,10 +1011,10 @@ require 'user.mappings'
 -- Open Netrw in Tree Mode
 -- vim.g.netrw_liststyle = 3
 
--- vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
--- vim.cmd [[hi NormalNC guibg=NONE ctermbg=NONE]] -- Optional für Inaktiv-Fenster
--- vim.cmd [[hi LineNr guibg=NONE ctermbg=NONE]] -- Zeilennummern transparent
--- vim.cmd [[hi SignColumn guibg=NONE]] -- Git/LSP-Symbole transparent
+vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
+vim.cmd [[hi NormalNC guibg=NONE ctermbg=NONE]] -- Optional für Inaktiv-Fenster
+vim.cmd [[hi LineNr guibg=NONE ctermbg=NONE]] -- Zeilennummern transparent
+vim.cmd [[hi SignColumn guibg=NONE]] -- Git/LSP-Symbole transparent
 
 -- Basic Settings
 -- vim.opt_local.cursorcolumn = true -- Highlight the current column
@@ -1049,10 +1049,10 @@ lspconfig.yamlls.setup {
   end,
   settings = {
     yaml = {
-      schemaStore = {
-        enable = true,
-        url = 'https://www.schemastore.org/api/json/catalog.json',
-      },
+      -- schemaStore = {
+      -- enable = true,
+      --   url = 'https://www.schemastore.org/api/json/catalog.json',
+      -- },
       validate = true,
     },
   },
@@ -1089,9 +1089,9 @@ require('lspconfig').helm_ls.setup {
     yaml = {
       format = {
         enable = true, -- Automatische Formatierung aktivieren
-      },
-      schemas = {
-        ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+        -- },
+        -- schemas = {
+        --   ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
       },
     },
   },

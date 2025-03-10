@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="Gozilla"
 # ZSH_THEME="Minimal"
 # ZSH_THEME="apple"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="garyblessington"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -151,3 +151,6 @@ git config --global core.editor "nvim"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
