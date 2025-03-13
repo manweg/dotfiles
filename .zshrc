@@ -156,3 +156,5 @@ export VISUAL="nvim"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
