@@ -17,7 +17,7 @@ ln -s $DOTFILES_DIR/.config/sketchybar ~/.config/sketchybar                     
 # Weitere Symlinks hier hinzufügen
 ```
 
-# run nvim with different configs
+## run nvim with different configs
 Config Ordner muss in .config vorhanden sein
 ```
 # astronvim
@@ -28,3 +28,6 @@ NVIM_APPNAME=astronvim nvim
 # kickstart
 NVIM_APPNAME=kickstart nvim
 ```
+
+## CRDs for helm-ls
+https://github.com/datreeio/CRDs-catalog
