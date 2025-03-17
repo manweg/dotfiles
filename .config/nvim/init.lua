@@ -935,7 +935,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'helm' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'helm' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -1038,8 +1038,6 @@ local function is_helm_chart(filepath)
   return chart_path:exists()
 end
 
--- LSP Configuration
--- require('lspconfig').yamlls.setup {
 -- lspconfig.yamlls.setup {
 --   on_attach = function(client, bufnr)
 --     local filepath = vim.api.nvim_buf_get_name(bufnr)
