@@ -10,7 +10,7 @@ sketchybar --add item date right \
 sketchybar --add item separator_date right                   \
            --set separator_date icon="|"                      \
                               icon.color=$WHITE              \
-                              icon.padding_left=5            \
-                              icon.padding_right=5           \
+                              icon.padding_left=3            \
+                              icon.padding_right=3           \
                               label.drawing=off              \
                               background.drawing=off

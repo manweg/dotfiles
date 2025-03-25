@@ -9,8 +9,8 @@ sketchybar --add item time right \
 sketchybar --add item separator_time right                   \
            --set separator_time icon="|"                      \
                               icon.color=$WHITE              \
-                              icon.padding_left=5            \
-                              icon.padding_right=5           \
+                              icon.padding_left=3            \
+                              icon.padding_right=3           \
                               label.drawing=off              \
                               background.drawing=off
 

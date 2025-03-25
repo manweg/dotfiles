@@ -10,7 +10,7 @@ sketchybar --add item cpu right \
 sketchybar --add item separator_cpu right                   \
            --set separator_cpu icon="|"                      \
                               icon.color=$WHITE              \
-                              icon.padding_left=5            \
-                              icon.padding_right=5           \
+                              icon.padding_left=3            \
+                              icon.padding_right=3           \
                               label.drawing=off              \
                               background.drawing=off

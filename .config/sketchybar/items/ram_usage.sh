@@ -9,7 +9,7 @@ sketchybar --add item ram right \
 # Add a separator after the RAM usage item
 sketchybar --add item separator_ram right \
                               icon.color=$WHITE \
-                              icon.padding_left=5 \
-                              icon.padding_right=5 \
+                              icon.padding_left=3 \
+                              icon.padding_right=3 \
                               label.drawing=off \
                               background.drawing=off

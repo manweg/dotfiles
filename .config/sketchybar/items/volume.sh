@@ -8,8 +8,8 @@ sketchybar --add item volume right \
 sketchybar --add item separator_volume right                   \
            --set separator_volume icon="|"                      \
                               icon.color=$WHITE              \
-                              icon.padding_left=5            \
-                              icon.padding_right=5           \
+                              icon.padding_left=3            \
+                              icon.padding_right=3           \
                               label.drawing=off              \
                               background.drawing=off
 

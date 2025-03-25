@@ -11,7 +11,7 @@ sketchybar --add item media right \
 # sketchybar --add item separator_media right \
 #                        --set separator_media icon="|" \
 #                        icon.color=$WHITE \
-#                        icon.padding_left=5 \
-#                        icon.padding_right=5 \
+#                        icon.padding_left=3 \
+#                        icon.padding_right=3 \
 #                        label.drawing=off \
 #                        background.drawing=off

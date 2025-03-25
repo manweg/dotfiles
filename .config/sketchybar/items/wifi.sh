@@ -9,7 +9,7 @@ sketchybar --add item wifi right \
 sketchybar --add item separator_wifi right                   \
            --set separator_wifi icon="|"                      \
                               icon.color=$WHITE              \
-                              icon.padding_left=5            \
-                              icon.padding_right=5           \
+                              icon.padding_left=3            \
+                              icon.padding_right=3           \
                               label.drawing=off              \
                               background.drawing=off
