@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sketchybar --add item media right \
+sketchybar --add item media center \
                        --set media label.color=$WHITE \
                        scroll_texts=on \
                        icon.color=$WHITE \

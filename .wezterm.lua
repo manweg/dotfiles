@@ -4,9 +4,12 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- config.font = wezterm.font("SF Mono")
-config.font = wezterm.font("SF Mono")
--- config.font = wezterm.font("Gohufont")
+-- You can specify some parameters to influence the font selection;
+-- for example, this selects a Bold, Italic font variant.
+config.font = wezterm.font("SF Mono", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("JetBrains Mono", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("Hack Nerd Font", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("GohuFont 14 Nerd Font Mono", { weight = "Regular", italic = false })
 config.font_size = 15
 
 config.enable_tab_bar = false
