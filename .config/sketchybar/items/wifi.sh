@@ -2,7 +2,7 @@
 
 sketchybar --add item wifi right \
            --set wifi update_freq=2 \
-                      icon="wifi:"  \
+                      icon="WIFI:"  \
                       icon.color=$BLUE \
                       script="$PLUGIN_DIR/wifi.sh"
 #

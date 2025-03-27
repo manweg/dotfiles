@@ -3,9 +3,11 @@
 
 sketchybar --add item date right \
            --set date  \
-                          update_freq=30 \
+                      update_freq=30 \
+                      icon="DATE:"  \
+                      icon.color=$BLUE \
                       label.color=$WHITE \
-                          script="$PLUGIN_DIR/date.sh"
+                      script="$PLUGIN_DIR/date.sh"
 
 sketchybar --add item separator_date right                   \
            --set separator_date icon="|"                      \

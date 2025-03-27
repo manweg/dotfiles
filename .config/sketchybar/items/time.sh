@@ -2,9 +2,11 @@
 
 sketchybar --add item time right \
            --set time  \
-                          update_freq=1 \
+                      update_freq=1 \
                       label.color=$WHITE \
-                          script="$PLUGIN_DIR/time.sh"
+                      icon="TIME:"  \
+                      icon.color=$BLUE \
+                      script="$PLUGIN_DIR/time.sh"
 
 sketchybar --add item separator_time right                   \
            --set separator_time icon="|"                      \
