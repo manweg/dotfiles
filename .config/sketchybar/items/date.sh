@@ -4,8 +4,6 @@
 sketchybar --add item date right \
            --set date  \
                       update_freq=30 \
-                      icon="DATE:"  \
-                      icon.color=$BLUE \
                       label.color=$WHITE \
                       script="$PLUGIN_DIR/date.sh"
 
