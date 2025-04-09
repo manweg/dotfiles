@@ -22,7 +22,7 @@
 
 What is Kickstart?
 
-  Kickstart.nvim is *not* a distribution.
+ Kickstart.nvim is *not* a distribution.
 
   Kickstart.nvim is a starting point for your own configuration.
     The goal is that you can read every line of code, top-to-bottom, understand
@@ -89,6 +89,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { noremap = true, silent = true })
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -234,6 +235,13 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  opts = { -- AstroNvim options must be set here with the `import` key
+    mapleader = ' ', -- This ensures the leader key must be configured before Lazy is set up
+    maplocalleader = ',', -- This ensures the localleader key must be configured before Lazy is set up
+    icons_enabled = true, -- Set to false to disable icons (if no Nerd Font is available)
+    pin_plugins = nil, -- Default will pin plugins when tracking `version` of AstroNvim, set to true/false to override
+    update_notifications = true, -- Enable/disable notification about running `:Lazy update` twice to update pinned plugins
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -1011,10 +1019,15 @@ require 'user.mappings'
 -- Open Netrw in Tree Mode
 -- vim.g.netrw_liststyle = 3
 
-vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
-vim.cmd [[hi NormalNC guibg=NONE ctermbg=NONE]] -- Optional für Inaktiv-Fenster
-vim.cmd [[hi LineNr guibg=NONE ctermbg=NONE]] -- Zeilennummern transparent
-vim.cmd [[hi SignColumn guibg=NONE]] -- Git/LSP-Symbole transparent
+vim.cmd [[
+  highlight NeoTreeNormal guibg=NONE ctermbg=NONE
+  highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
+  highlight NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NormalNC guibg=NONE ctermbg=NONE
+  hi LineNr guibg=NONE ctermbg=NONE
+  hi SignColumn guibg=NONE
+]]
 
 -- Basic Settings
 -- vim.opt_local.cursorcolumn = true -- Highlight the current column
@@ -1123,6 +1136,8 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.api.nvim_buf_set_keymap(0, 'n', 'zj', ':lua NavigateFold("j")<CR>', { noremap = true, silent = true })
 vim.api.nvim_buf_set_keymap(0, 'n', 'zk', ':lua NavigateFold("k")<CR>', { noremap = true, silent = true })
+
+vim.opt.fillchars:append { eob = ' ' }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

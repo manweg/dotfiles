@@ -1,10 +1,22 @@
 -- Apps
-vim.keymap.set('n', '<Leader>e', ':Ex<Return>', { desc = 'Open Netrw' })
+vim.keymap.set('n', '<Leader>e', ':Neotree toggle<Return>', { desc = 'Open Netrw' })
 vim.keymap.set('n', '<Leader>o', ':Ex<Return>', { desc = 'Open Netrw' })
 vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', { desc = 'Open LazyGit' })
+
 -- Buffer
-vim.keymap.set('n', '<tab>', ':bnext<CR>', { noremap = true, silent = true, desc = 'Next buffer' })
+-- Falls :b# keymap nicht praktikabel, dann folgendes Plugin:
+-- {
+--   "kwkarlwang/bufjump.nvim",
+--   opts = {},
+--   keys = {
+--     { "<S-Tab>", function() require("bufjump").backward() end, desc = "Zurück im Buffer-Verlauf" },
+--     { "<Tab>", function() require("bufjump").forward() end, desc = "Vor im Buffer-Verlauf" },
+--   },
+-- }
+
+-- vim.keymap.set('n', '<tab>', ':bnext<CR>', { noremap = true, silent = true, desc = 'Next buffer' })
 vim.keymap.set('n', '<s-tab>', ':bprev<CR>', { noremap = true, silent = true, desc = 'Previousbuffer' })
+vim.keymap.set('n', '<tab>', ':b#<CR>', { noremap = true, silent = true, desc = 'Previousbuffer' })
 -- Moving
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Halbe Seite nach unten und Cursor zentrieren' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Halbe Seite nach oben und Cursor zentrieren' })
