@@ -1,6 +1,6 @@
 -- Apps
-vim.keymap.set('n', '<Leader>e', ':Neotree toggle<Return>', { desc = 'Open Netrw' })
-vim.keymap.set('n', '<Leader>o', ':Ex<Return>', { desc = 'Open Netrw' })
+-- vim.keymap.set('n', '<Leader>e', ':Neotree toggle<Return>', { desc = 'Open Netrw' })
+-- vim.keymap.set('n', '<Leader>o', ':Ex<Return>', { desc = 'Open Netrw' })
 vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', { desc = 'Open LazyGit' })
 
 -- Buffer
