@@ -1,7 +1,5 @@
 -- Apps
--- vim.keymap.set('n', '<Leader>e', ':Neotree toggle<Return>', { desc = 'Open Netrw' })
--- vim.keymap.set('n', '<Leader>o', ':Ex<Return>', { desc = 'Open Netrw' })
-vim.keymap.set('n', '<Leader>g', ':LazyGit<CR>', { desc = 'Open LazyGit' })
+vim.keymap.set('n', '<Leader>l', ':LazyGit<CR>', { desc = 'Open LazyGit' })
 
 -- Buffer
 -- Falls :b# keymap nicht praktikabel, dann folgendes Plugin:
@@ -22,8 +20,6 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Halbe Seite nach unten und Cur
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Halbe Seite nach oben und Cursor zentrieren' })
 -- New tab
 vim.keymap.set('n', 'te', ':tabedit')
--- vim.keymap.set('n', '<tab>', ':tabnext<Return>')
--- vim.keymap.set('n', '<s-tab>', ':tabprev<Return>')
 -- Split window
 vim.keymap.set('n', 'ss', ':split<Return>', { desc = 'Split' })
 vim.keymap.set('n', 'sv', ':vsplit<Return>', { desc = 'Vsplit' })
@@ -33,10 +29,3 @@ vim.keymap.set('n', 'sk', '<C-w>k')
 vim.keymap.set('n', 'sj', '<C-w>j')
 vim.keymap.set('n', 'sl', '<C-w>l')
 
-vim.keymap.set('n', '<leader>b', function()
-  if vim.o.background == 'dark' then
-    vim.o.background = 'light'
-  else
-    vim.o.background = 'dark'
-  end
-end, { desc = 'Toggle Background (Dark/Light)' })

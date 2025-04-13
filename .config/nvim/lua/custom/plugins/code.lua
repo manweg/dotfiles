@@ -20,27 +20,14 @@ return {
       'LazyGitFilter',
       'LazyGitFilterCurrentFile',
     },
-    -- optional for floating window border decoration
     dependencies = {
       'nvim-lua/plenary.nvim',
-    },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
 
   {
-    -- Add the community repository of plugin specifications
     'towolf/vim-helm',
   },
-  -- lazy.nvim
-  -- {
-  --   'm4xshen/hardtime.nvim',
-  --   dependencies = { 'MunifTanjim/nui.nvim' },
-  --   opts = {},
-  -- },
   {
     'numToStr/Comment.nvim',
     opts = {
@@ -117,12 +104,6 @@ return {
         mode = { 'n', 'v' },
         '<cmd>Yazi<cr>',
         desc = 'Open yazi at the current file',
-      },
-      {
-        -- Open in the current working directory
-        '<leader>cw',
-        '<cmd>Yazi cwd<cr>',
-        desc = "Open the file manager in nvim's working directory",
       },
       {
         '<c-up>',
