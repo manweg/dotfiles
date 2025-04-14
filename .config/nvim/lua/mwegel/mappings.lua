@@ -31,6 +31,30 @@ vim.keymap.set('n', 'sk', '<C-w>k')
 vim.keymap.set('n', 'sj', '<C-w>j')
 vim.keymap.set('n', 'sl', '<C-w>l')
 
+-- Session
+-- load the session for the current directory
+vim.keymap.set('n', '<leader>Ss', function()
+  require('persistence').load()
+end, { desc = 'Load session of current dir' })
+
+--vim.keymap.set('n', '<s-tab>', ':bprev<CR>', { noremap = true, silent = true, desc = 'Previousbuffer' })
+
+-- select a session to load
+vim.keymap.set('n', '<leader>SS', function()
+  require('persistence').select()
+end, { desc = 'Select session to load' })
+
+-- load the last session
+vim.keymap.set('n', '<leader>Sl', function()
+  require('persistence').load { last = true }
+end, { desc = 'Load last session' })
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set('n', '<leader>Sd', function()
+  require('persistence').stop()
+end, { desc = 'Stop persistence' })
+
+
 -- Buffer
 -- Falls :b# keymap nicht praktikabel, dann folgendes Plugin:
 -- {
