@@ -123,6 +123,7 @@ alias kex='kubectl exec -it'
 alias kns='kubectl config set-context --current --namespace'
 alias kd='kubectl describe'
 #alias ls='colorls'
+# alias nvim='nvim -c "lua require(\"telescope.builtin\").oldfiles()"'
 
 # Fuzzy find Git Repo
 alias gitf='cd "$(find ~/GitWork -maxdepth 1 -type d | fzf)"'
@@ -150,4 +151,7 @@ bindkey -M vicmd '^R' fzf-history-widget
 git config --global core.editor "nvim"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export MANPAGER="nvim +Man!"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 

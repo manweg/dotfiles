@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.opt.termguicolors = true
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -62,6 +63,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
 -- vim.opt_local.cursorcolumn = true -- Highlight the current column
 vim.opt_local.shiftwidth = 2   -- Number of spaces to use for each step of (auto)indent
@@ -87,17 +92,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
-
-vim.cmd [[
-  highlight NeoTreeNormal guibg=NONE ctermbg=NONE
-  highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
-  highlight NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
-  hi Normal guibg=NONE ctermbg=NONE
-  hi NormalNC guibg=NONE ctermbg=NONE
-  hi LineNr guibg=NONE ctermbg=NONE
-  hi SignColumn guibg=NONE
-]]
 
 vim.opt.fillchars:append { eob = ' ' }
 

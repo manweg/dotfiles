@@ -1,5 +1,10 @@
 -- Apps
 vim.keymap.set('n', '<Leader>l', ':LazyGit<CR>', { desc = 'Open LazyGit' })
+vim.keymap.set('n', '<Leader>o', ':Oil<CR>', { desc = 'Open Oil file-manager' })
+
+-- Buffer
+vim.keymap.set('n', '<Leader>bc', ':bd<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<Leader>ba', ':%bd|e#|bd#<CR>', { desc = 'Close all buffer not current' })
 
 -- [[ kickstart Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -53,6 +58,7 @@ end, { desc = 'Load last session' })
 vim.keymap.set('n', '<leader>Sd', function()
   require('persistence').stop()
 end, { desc = 'Stop persistence' })
+
 
 
 -- Buffer

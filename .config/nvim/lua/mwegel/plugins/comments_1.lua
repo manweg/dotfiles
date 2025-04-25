@@ -12,7 +12,7 @@ return
       ---LHS of toggle mappings in NORMAL mode
       toggler = {
         ---Line-comment toggle keymap
-        line = 'gcc',
+        line = '<Leader>c',
         ---Block-comment toggle keymap
         block = 'gbc',
       },

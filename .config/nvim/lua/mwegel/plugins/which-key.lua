@@ -47,6 +47,8 @@ return {
         { '<leader>f', group = 'Find' },
         { '<leader>S', group = 'Session' },
         { '<leader>g', group = 'Gitsigns' },
+        { '<leader>b', group = 'Buffers' },
+        { '<leader>t', group = 'Toggle' },
       },
     },
   },

@@ -7,6 +7,9 @@ local config = wezterm.config_builder()
 -- You can specify some parameters to influence the font selection;
 -- for example, this selects a Bold, Italic font variant.
 config.font = wezterm.font("SF Mono", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("Fira Code", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("Victor Mono", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("IBM Plex Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("JetBrains Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Hack Nerd Font", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("GohuFont 14 Nerd Font Mono", { weight = "Regular", italic = false })
@@ -28,6 +31,7 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = "nord"
 -- config.color_scheme = "Chalk (Gogh)"
 config.color_scheme = "Chalk (dark) (terminal.sexy)"
+-- config.color_scheme = "Builtin Solarized Dark"
 
 -- Custom keybindings for Option key
 config.keys = {

@@ -11,7 +11,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  spec = "mwegel.lazy",
+  spec = "mwegel.plugins",
   'tpope/vim-sleuth',
   opts = {
     mapleader = ' ',
