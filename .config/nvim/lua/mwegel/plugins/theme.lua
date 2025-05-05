@@ -1,44 +1,66 @@
 -- return
 -- {
---   -- theme
---     -- 'folke/tokyonight.nvim',
---     -- 'Mofiqul/vscode.nvim',
---     -- 'EdenEast/nightfox.nvim',
---     -- 'sainnhe/everforest',
---     -- 'rafamadriz/neon',
---     -- 'rose-pine/neovim',
---     -- 'arcticicestudio/nord-vim',
---     -- 'cocopon/iceberg.vim',
---     'fxn/vim-monochrome',
---     -- 'morhetz/gruvbox',
---     -- 'davidosomething/vim-colors-meh',
---     -- 'widatama/vim-phoenix',
---     -- 'andreypopp/vim-colors-plain',
---
---     transparent = true,
---     priority = 1000,   -- Make sure to load this before all the other start plugins.
---     init = function()
---       -- Load the colorscheme here.
---       -- Like many other themes, this one has different styles, and you could load
---       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
---       -- vim.cmd.colorscheme 'tokyonight-night'
---       -- vim.cmd.colorscheme 'nightfox'
---       -- vim.cmd.colorscheme 'vscode'
---       -- vim.cmd.colorscheme 'neon'
---       -- vim.cmd.colorscheme 'iceberg'
---       vim.cmd.colorscheme 'monochrome'
---       -- vim.cmd.colorscheme 'rose-pine'
---       -- vim.cmd.colorscheme 'nord'
---       -- vim.cmd.colorscheme 'gruvbox'
---       -- vim.cmd.colorscheme 'everforest'
---       -- vim.cmd.colorscheme 'meh'
---       -- vim.cmd.colorscheme 'phoenix'
---       -- vim.cmd.colorscheme 'plain'
---
---       -- You can configure highlights by doing something like:
---       vim.cmd.hi 'Comment gui=none'
---     end,
---   }
+--     "zenbones-theme/zenbones.nvim",
+--     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+--     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+--     -- In Vim, compat mode is turned on as Lush only works in Neovim.
+--     dependencies = "rktjmp/lush.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     -- you can set set configuration options here
+--     config = function()
+--         vim.g.zenbones_darken_comments = 45
+--         vim.cmd.colorscheme('zenbones')
+--         -- vim.cmd.colorscheme('zenwritten')
+--     end
+-- }
+
+
+return
+{
+  -- theme
+    -- 'folke/tokyonight.nvim',
+    -- 'Mofiqul/vscode.nvim',
+    -- 'EdenEast/nightfox.nvim',
+    -- 'sainnhe/everforest',
+    -- 'rafamadriz/neon',
+    -- 'rose-pine/neovim',
+    -- 'arcticicestudio/nord-vim',
+    -- 'cocopon/iceberg.vim',
+    -- 'fxn/vim-monochrome',
+    -- 'morhetz/gruvbox',
+    'davidosomething/vim-colors-meh',
+    -- 'widatama/vim-phoenix',
+    -- 'andreypopp/vim-colors-plain',
+    -- 'p00f/alabaster.nvim',
+    -- 'rebelot/kanagawa.nvim',
+
+    transparent = true,
+    priority = 1000,   -- Make sure to load this before all the other start plugins.
+    init = function()
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'nightfox'
+      -- vim.cmd.colorscheme 'vscode'
+      -- vim.cmd.colorscheme 'neon'
+      -- vim.cmd.colorscheme 'iceberg'
+      -- vim.cmd.colorscheme 'monochrome'
+      -- vim.cmd.colorscheme 'rose-pine'
+      -- vim.cmd.colorscheme 'nord'
+      -- vim.cmd.colorscheme 'gruvbox'
+      -- vim.cmd.colorscheme 'everforest'
+      vim.cmd.colorscheme 'meh'
+      -- vim.cmd.colorscheme 'phoenix'
+      -- vim.cmd.colorscheme 'plain'
+      -- vim.cmd.colorscheme 'alabaster'
+      -- vim.cmd.colorscheme 'kanagawa'
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  }
 
 
 -- return
@@ -223,19 +245,3 @@
 --     require("black-metal").load()
 --     end,
 --     }
-
-return
-{
-    "zenbones-theme/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    dependencies = "rktjmp/lush.nvim",
-    lazy = false,
-    priority = 1000,
-    -- you can set set configuration options here
-    config = function()
-        vim.g.zenbones_darken_comments = 45
-        vim.cmd.colorscheme('zenbones')
-    end
-}

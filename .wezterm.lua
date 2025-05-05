@@ -32,6 +32,8 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = "Chalk (Gogh)"
 config.color_scheme = "Chalk (dark) (terminal.sexy)"
 -- config.color_scheme = "Builtin Solarized Dark"
+-- config.color_scheme = "zenbones_dark"
+-- config.color_scheme = 'zenbones'
 
 -- Custom keybindings for Option key
 config.keys = {

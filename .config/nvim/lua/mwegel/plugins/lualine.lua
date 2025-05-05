@@ -3,8 +3,8 @@ return {
   config = function()
     local theme = require("lualine.themes.iceberg")
     -- Farben für die Mode-Sektion (Sektion "a" zeigt den Modus an)
-    theme.normal.a.fg = "#5e81ac"
-    theme.normal.a.bg = "#5e81ac"  -- z.B. nordblau
+    theme.normal.a.fg = "#688194"
+    theme.normal.a.bg = "#688194"  -- z.B. nordblau
     theme.normal.a.gui = "bold"
 
     theme.insert.a.fg = "#a3be8c"

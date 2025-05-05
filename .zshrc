@@ -155,3 +155,7 @@ export MANPAGER="nvim +Man!"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
