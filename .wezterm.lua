@@ -18,7 +18,7 @@ config.font_size = 15
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.90
+config.window_background_opacity = 0.80
 config.macos_window_background_blur = 15
 
 -- config.colors = require("cyberdream-light")
@@ -29,11 +29,15 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = "Chalk"
 -- config.color_scheme = "nightfox"
 -- config.color_scheme = "nord"
--- config.color_scheme = "Chalk (Gogh)"
-config.color_scheme = "Chalk (dark) (terminal.sexy)"
+-- config.color_scheme = "Chalk (dark) (terminal.sexy)"
 -- config.color_scheme = "Builtin Solarized Dark"
 -- config.color_scheme = "zenbones_dark"
--- config.color_scheme = 'zenbones'
+-- config.color_scheme = 'Maia (Gogh)'
+-- config.color_scheme = 'MaterialOcean'
+-- config.color_scheme = 'matrix'
+-- config.color_scheme = 'Mono Theme (terminal.sexy)'
+-- config.color_scheme = 'Atelierheath (dark) (terminal.sexy)'
+config.color_scheme = "Chalk (Gogh)"
 
 -- Custom keybindings for Option key
 config.keys = {
