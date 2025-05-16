@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Neovim as Vim
-alias vim='nvim'
+# alias vim='nvim'
 alias astronvim='NVIM_APPNAME=astronvim nvim'
 alias kickstart='NVIM_APPNAME=kickstart nvim'
 
@@ -159,3 +159,4 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

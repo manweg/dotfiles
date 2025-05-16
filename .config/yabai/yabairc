@@ -37,7 +37,7 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 
 #
-borders active_color=0xff979595 inactive_color=0x0xffd1d1d1 width=2 style=round
+borders active_color=0xffd7d7d7 inactive_color=0xff000000 width=2 style=round
 # borders active_color=0xff475a71 inactive_color=0xff000000 width=5 style=round
 # borders active_color=0xff486f9a inactive_color=0xff000000 width=5 style=round
 
