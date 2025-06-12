@@ -37,20 +37,6 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 
 #
-borders active_color=0xffd7d7d7 inactive_color=0xff000000 width=2 style=round
+borders active_color=0xff475a71 inactive_color=0xff000000 width=2 style=round
 # borders active_color=0xff475a71 inactive_color=0xff000000 width=5 style=round
 # borders active_color=0xff486f9a inactive_color=0xff000000 width=5 style=round
-
-# # Web browsers
-# yabai -m rule --add app="^Google Chrome|Firefox|Safari$" space=1
-# # Text editors
-# yabai -m rule --add app="^(Code|WezTerm)$" space=2
-# # Jetbrains apps
-# yabai -m rule --add app="^Microsoft Teams|Microsoft Outlook$" space=3
-# # # Terminal
-# # yabai -m rule --add app="^(Alacritty)$" space=4
-# # # Music
-# yabai -m rule --add app="^(Spotify|Amazon Music)$" space=5
-# # Social
-# yabai -m rule --add app="^(Slack|WhatsApp|Microsoft Teams)$" space=6
-

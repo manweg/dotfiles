@@ -11,6 +11,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  change_detection = { enabled = false },
   spec = "mwegel.plugins",
   'tpope/vim-sleuth',
   opts = {

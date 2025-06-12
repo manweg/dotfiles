@@ -11,14 +11,19 @@ config.font = wezterm.font("SF Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Victor Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("IBM Plex Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("JetBrains Mono", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("Iosevka Term", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Hack Nerd Font", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("GohuFont 14 Nerd Font Mono", { weight = "Regular", italic = false })
-config.font_size = 15
+config.font_size = 17
+
+-- modified de
+--   master
+--   thanks
 
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.95
 config.macos_window_background_blur = 15
 
 -- config.colors = require("cyberdream-light")

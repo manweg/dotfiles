@@ -3,8 +3,18 @@ return {
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
+      preset = "modern",
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.opt.timeoutlen
+      win = {
+        -- don't allow the popup to overlap with the cursor
+        no_overlap = true,
+        width = 120,
+        -- height = { min = 4, max = 25 },
+        -- col = 0,
+        -- row = math.huge,
+        border = "single",
+         },
       delay = 0,
       icons = {
         -- set icon mappings to true if you have a Nerd Font

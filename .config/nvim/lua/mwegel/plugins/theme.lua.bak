@@ -29,11 +29,13 @@ return
     -- 'cocopon/iceberg.vim',
     -- 'fxn/vim-monochrome',
     -- 'morhetz/gruvbox',
-    'davidosomething/vim-colors-meh',
+    -- 'davidosomething/vim-colors-meh',
     -- 'widatama/vim-phoenix',
     -- 'andreypopp/vim-colors-plain',
     -- 'p00f/alabaster.nvim',
+    -- 'slugbyte/lackluster.nvim',
     -- 'rebelot/kanagawa.nvim',
+    'webhooked/kanso.nvim',
 
     transparent = true,
     priority = 1000,   -- Make sure to load this before all the other start plugins.
@@ -51,11 +53,14 @@ return
       -- vim.cmd.colorscheme 'nord'
       -- vim.cmd.colorscheme 'gruvbox'
       -- vim.cmd.colorscheme 'everforest'
-      vim.cmd.colorscheme 'meh'
+      -- vim.cmd.colorscheme 'meh'
       -- vim.cmd.colorscheme 'phoenix'
       -- vim.cmd.colorscheme 'plain'
       -- vim.cmd.colorscheme 'alabaster'
-      -- vim.cmd.colorscheme 'kanagawa'
+      -- vim.cmd.colorscheme 'lackluster'
+      -- vim.cmd("colorscheme kanagawa-wave")
+      -- vim.cmd("colorscheme kanagawa-dragon")
+      vim.cmd("colorscheme kanso")
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'

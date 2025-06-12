@@ -5,6 +5,17 @@ vim.opt.termguicolors = true
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
+-- winbar
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  callback = function()
+    if vim.bo.buftype == "" then
+      vim.opt_local.winbar = "%t"
+    else
+      vim.opt_local.winbar = ""
+    end
+  end,
+})
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
