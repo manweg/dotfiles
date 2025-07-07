@@ -155,6 +155,7 @@ export MANPAGER="nvim +Man!"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+eval "$(zoxide init zsh)"  # or bash/fish
 
 
 # Load Angular CLI autocompletion.

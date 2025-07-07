@@ -16,3 +16,6 @@ vim.cmd [[
   hi FloatBorder guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE
 ]]
 
+vim.o.background = "light"
+vim.cmd.colorscheme("default")
+

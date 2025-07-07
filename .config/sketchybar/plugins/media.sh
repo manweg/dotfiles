@@ -11,14 +11,14 @@
 
 #!/bin/bash
 
-APP="Spotify"
-STATE=$(osascript -e "tell application \"$APP\" to player state as string")
-
-if [ "$STATE" = "playing" ]; then
-    TRACK=$(osascript -e "tell application \"$APP\" to name of current track as string")
-    ARTIST=$(osascript -e "tell application \"$APP\" to artist of current track as string")
-
-    sketchybar --set $NAME label="$ARTIST – $TRACK" 
-else
-    sketchybar --set $NAME label="" 
-fi
+# APP="Spotify"
+# STATE=$(osascript -e "tell application \"$APP\" to player state as string")
+#
+# if [ "$STATE" = "playing" ]; then
+#     TRACK=$(osascript -e "tell application \"$APP\" to name of current track as string")
+#     ARTIST=$(osascript -e "tell application \"$APP\" to artist of current track as string")
+#
+#     sketchybar --set $NAME label="$ARTIST – $TRACK" 
+# else
+#     sketchybar --set $NAME label="" 
+# fi
