@@ -26,7 +26,6 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 15
 
--- config.colors = require("cyberdream-light")
 -- config.color_scheme = "Bluloco Zsh Light (Gogh)"
 -- config.color_scheme = "MaterialDarker"
 -- config.color_scheme = "MaterialDark"
@@ -45,7 +44,19 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = "Chalk (Gogh)"
 -- config.color_scheme = "Zenburn"
 -- config.color_scheme = 'zenburn (terminal.sexy)'
-config.color_scheme = 'zenwritten_dark'
+-- config.color_scheme = 'zenwritten_dark'
+-- config.color_scheme = 'Apprentice (Gogh)'
+-- config.color_scheme = 'Ashes (dark) (terminal.sexy)'
+
+-- Light Themes:
+-- config.color_scheme = 'zenwritten_light'
+-- config.color_scheme = 'Chalk (light) (terminal.sexy)'
+-- config.color_scheme = 'Classic Light (base16)'
+-- config.color_scheme = '3024 (light) (terminal.sexy)'
+-- config.color_scheme = '3024 Day'
+config.color_scheme = 'Alabaster'
+-- config.color_scheme = 'Ashes (light) (terminal.sexy)'
+
 
 -- Custom keybindings for Option key
 config.keys = {

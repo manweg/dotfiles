@@ -157,6 +157,8 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 eval "$(zoxide init zsh)"  # or bash/fish
 
+# Set JAVA_HOME
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
