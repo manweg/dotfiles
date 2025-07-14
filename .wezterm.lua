@@ -26,8 +26,6 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 15
 
--- config.color_scheme = "Bluloco Zsh Light (Gogh)"
--- config.color_scheme = "MaterialDarker"
 -- config.color_scheme = "MaterialDark"
 -- config.color_scheme = "Monokai Pro (Gogh)"
 -- config.color_scheme = "Chalk"
@@ -42,11 +40,27 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = 'Mono Theme (terminal.sexy)'
 -- config.color_scheme = 'Atelierheath (dark) (terminal.sexy)'
 -- config.color_scheme = "Chalk (Gogh)"
+-- config.color_scheme = 'PaperColor Dark (base16)'
+-- config.color_scheme = 'Papercolor Dark (Gogh)'
 -- config.color_scheme = "Zenburn"
 -- config.color_scheme = 'zenburn (terminal.sexy)'
 -- config.color_scheme = 'zenwritten_dark'
 -- config.color_scheme = 'Apprentice (Gogh)'
 -- config.color_scheme = 'Ashes (dark) (terminal.sexy)'
+-- config.color_scheme = 'Tango (terminal.sexy)'
+-- config.color_scheme = 'Github Dark (Gogh)'
+-- config.color_scheme = 'Grayscale (dark) (terminal.sexy)'
+-- config.color_scheme = 'Gruvbox Material (Gogh)'
+config.color_scheme = 'Guezwhoz'
+-- config.color_scheme = 'Pali (Gogh)'
+-- config.color_scheme = 'Kanagawa (Gogh)'
+-- config.color_scheme = 'One Dark (Gogh)'
+-- config.color_scheme = 'N0tch2k'
+-- config.color_scheme = 'Navy and Ivory (terminal.sexy)'
+-- config.color_scheme = 'neobones_dark'
+-- config.color_scheme = 'Neutron'
+-- config.color_scheme = 'Nucolors (terminal.sexy)'
+-- config.color_scheme = 'NvimDark'
 
 -- Light Themes:
 -- config.color_scheme = 'zenwritten_light'
@@ -54,7 +68,7 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = 'Classic Light (base16)'
 -- config.color_scheme = '3024 (light) (terminal.sexy)'
 -- config.color_scheme = '3024 Day'
-config.color_scheme = 'Alabaster'
+-- config.color_scheme = 'Alabaster'
 -- config.color_scheme = 'Ashes (light) (terminal.sexy)'
 
 

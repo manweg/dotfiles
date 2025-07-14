@@ -1,6 +1,6 @@
 require("mwegel")
 
-vim.o.background = "light"
+vim.o.background = "dark"
 vim.cmd.colorscheme("default")
 
 if vim.o.background == 'dark' then
@@ -12,6 +12,9 @@ if vim.o.background == 'dark' then
   vim.cmd("hi NormalFloat guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi FloatBorder guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi LineNr guifg=gray guibg=NONE ctermbg=NONE")
+  vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+  vim.cmd("hi VertSplit guibg=NONE ctermbg=NONE")
+
 else
   vim.cmd("hi Normal guibg=NONE")
   vim.cmd("hi StatusLine guifg=black ctermfg=8 guibg=NONE ctermbg=NONE")
