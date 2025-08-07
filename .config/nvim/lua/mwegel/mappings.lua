@@ -4,7 +4,8 @@ vim.keymap.set('n', '<Leader>o', ':Oil<CR>', { desc = 'Open Oil file-manager' })
 
 -- Buffer
 vim.keymap.set('n', '<Leader>bc', ':bd<CR>', { desc = 'Close current buffer' })
-vim.keymap.set('n', '<Leader>ba', ':%bd|e#|bd#<CR>', { desc = 'Close all buffer not current' })
+vim.keymap.set('n', '<Leader>bn', ':%bd|e#|bd#<CR>', { desc = 'Close all buffer not current' })
+vim.keymap.set('n', '<Leader>ba', ':%bd<CR>', { desc = 'Close all buffers'})
 
 -- [[ kickstart Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

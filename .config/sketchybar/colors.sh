@@ -1,7 +1,8 @@
 #!/bin/bash
 
 export WHITE=0xffd7d7d7
-export BLUE=0xff4a90e2
+# export BLUE=0xff4a90e2
+export BLUE=0xff81afe3
 export ORANGE=0xfff5a623
 # -- Gray Scheme --
 export BAR_COLOR=0xe61f1f1f
