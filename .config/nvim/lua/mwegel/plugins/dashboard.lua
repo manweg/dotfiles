@@ -1,17 +1,3 @@
-local cowsay = 
-[[
- ________
-< Hello! >
- --------
-     \
-      \
-          oO)-.                       .-(Oo
-         /__  _\                     /_  __\
-         \  \(  |     ()~()         |  )/  /
-          \__|\ |    (-___-)        | /|__/
-          '  '--'    ==`-'==        '--'  '
-]]
-
 return {
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
@@ -34,24 +20,11 @@ return {
         mru = { enable = true, limit = 10 },
       },
       hide = {
-        statusline = false,
-        tabline = false,
-        winbar = false,
-      },
-      preview = {
-        command = 'cowsay',
-        file_path = '',
-        file_height = 20,
-        file_width = 100,
-      },
-    })
-
-    -- Cowsay als Header setzen
-    require('dashboard').setup({
-      config = {
-        header = vim.split(cowsay, '\n'),
+        statusline = true,
+        tabline = true,
+        winbar = true,
       },
     })
   end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
 }

@@ -12,6 +12,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   change_detection = { enabled = false },
+  ui = {
+    border = "single", -- or "single", "double", "shadow", "none"
+  },
   spec = "mwegel.plugins",
   'tpope/vim-sleuth',
   opts = {
