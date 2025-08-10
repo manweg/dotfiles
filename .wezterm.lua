@@ -73,12 +73,26 @@ config.color_scheme = 'Guezwhoz'
 
 
 -- Custom keybindings for Option key
+-- config.keys = {
+-- 	-- Option + Left Arrow
+-- 	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
+-- 	-- Option + Right Arrow
+-- 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
+-- }
+
 config.keys = {
-	-- Option + Left Arrow
-	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
-	-- Option + Right Arrow
-	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
+  {
+    key = "RightArrow",
+    mods = "OPT",
+    action = wezterm.action.SendString("\x1bf"),
+  },
+  {
+    key = "LeftArrow",
+    mods = "OPT",
+    action = wezterm.action.SendString("\x1bb"),
+  },
 }
+
 
 -- config to use left option and right option key as meta
 config.send_composed_key_when_left_alt_is_pressed = true

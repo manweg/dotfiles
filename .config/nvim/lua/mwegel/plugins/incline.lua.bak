@@ -1,0 +1,33 @@
+return {
+  "b0o/incline.nvim",
+  lazy = false,
+  config = function()
+    require("incline").setup({
+      render = function(props)
+        local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+        return { { filename } }
+      end,
+      window = {
+        placement = {
+          horizontal = "left",
+          vertical = "top",
+        },
+        margin = {
+          vertical = 1,  -- avoid overlap
+          horizontal = 0,
+        },
+        padding = 0,
+        zindex = 50,  -- ensures floating window is above content
+        overlap = {
+          winbar = false,      -- avoids conflict with native winbar
+          statusline = false,
+          tabline = false,
+          borders = true,
+        },
+      },
+      hide = {
+        only_win = true,
+      },
+    })
+  end,
+}
