@@ -25,3 +25,11 @@ else
   vim.cmd("hi FloatBorder guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi LineNr guifg=gray guibg=NONE ctermbg=NONE")
 end
+
+-- At the bottom or top of your init.lua
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.wo.winbar = nil
+  end,
+})
+
