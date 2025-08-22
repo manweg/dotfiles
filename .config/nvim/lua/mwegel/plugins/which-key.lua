@@ -58,7 +58,7 @@ return {
         { '<leader>S', group = 'Session' },
         { '<leader>g', group = 'Gitsigns' },
         { '<leader>b', group = 'Buffers' },
-        { '<leader>t', group = 'Toggle' },
+        -- { '<leader>t', group = 'Toggle' },
       },
     },
   },

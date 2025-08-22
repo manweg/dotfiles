@@ -6,10 +6,10 @@ local config = wezterm.config_builder()
 
 -- You can specify some parameters to influence the font selection;
 -- for example, this selects a Bold, Italic font variant.
-config.font = wezterm.font("SF Mono", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("SF Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Fira Code", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Victor Mono", { weight = "Regular", italic = false })
--- config.font = wezterm.font("IBM Plex Mono", { weight = "Regular", italic = false })
+config.font = wezterm.font("IBM Plex Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("JetBrains Mono", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Iosevka Term", { weight = "Regular", italic = false })
 -- config.font = wezterm.font("Hack Nerd Font", { weight = "Regular", italic = false })
@@ -25,13 +25,25 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 15
+config.colors = {
+  -- The default text color
+  foreground = '#b0b0b0',
+  -- The default background color
+  background = '#222222',
+}
 
 -- config.color_scheme = "MaterialDark"
+
 -- config.color_scheme = "Monokai Pro (Gogh)"
+-- config.color_scheme = "Monokai Pro (Gogh)"
+
 -- config.color_scheme = "Chalk"
+-- config.color_scheme = "Chalk (dark) (terminal.sexy)"
+
+-- config.color_scheme = "Chalk (Gogh)"
+
 -- config.color_scheme = "nightfox"
 -- config.color_scheme = "nord"
--- config.color_scheme = "Chalk (dark) (terminal.sexy)"
 -- config.color_scheme = "Builtin Solarized Dark"
 -- config.color_scheme = "zenbones_dark"
 -- config.color_scheme = 'Maia (Gogh)'
@@ -39,28 +51,31 @@ config.macos_window_background_blur = 15
 -- config.color_scheme = 'matrix'
 -- config.color_scheme = 'Mono Theme (terminal.sexy)'
 -- config.color_scheme = 'Atelierheath (dark) (terminal.sexy)'
--- config.color_scheme = "Chalk (Gogh)"
 -- config.color_scheme = 'PaperColor Dark (base16)'
 -- config.color_scheme = 'Papercolor Dark (Gogh)'
 -- config.color_scheme = "Zenburn"
+-- config.color_scheme = 'Zenburn (base16)'
 -- config.color_scheme = 'zenburn (terminal.sexy)'
--- config.color_scheme = 'zenwritten_dark'
+config.color_scheme = 'zenwritten_dark'
 -- config.color_scheme = 'Apprentice (Gogh)'
 -- config.color_scheme = 'Ashes (dark) (terminal.sexy)'
 -- config.color_scheme = 'Tango (terminal.sexy)'
 -- config.color_scheme = 'Github Dark (Gogh)'
 -- config.color_scheme = 'Grayscale (dark) (terminal.sexy)'
 -- config.color_scheme = 'Gruvbox Material (Gogh)'
-config.color_scheme = 'Guezwhoz'
+-- config.color_scheme = 'Guezwhoz'
 -- config.color_scheme = 'Pali (Gogh)'
 -- config.color_scheme = 'Kanagawa (Gogh)'
 -- config.color_scheme = 'One Dark (Gogh)'
 -- config.color_scheme = 'N0tch2k'
--- config.color_scheme = 'Navy and Ivory (terminal.sexy)'
--- config.color_scheme = 'neobones_dark'
 -- config.color_scheme = 'Neutron'
--- config.color_scheme = 'Nucolors (terminal.sexy)'
--- config.color_scheme = 'NvimDark'
+-- config.color_scheme = 'Afterglow'
+-- config.color_scheme = 'Afterglow (Gogh)'
+--
+-- config.color_scheme = 'Apprentice (Gogh)'
+--
+-- config.color_scheme = 'Gruvbox Dark (Gogh)'
+-- config.color_scheme = 'Gruvbox Material (Gogh)'
 
 -- Light Themes:
 -- config.color_scheme = 'zenwritten_light'

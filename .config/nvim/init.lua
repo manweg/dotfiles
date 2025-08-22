@@ -1,19 +1,19 @@
 require("mwegel")
 
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 -- vim.cmd.colorscheme("default")
 
 if vim.o.background == 'dark' then
-  vim.cmd("hi Normal guibg=#2E3440")
   vim.cmd("hi StatusLine guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi StatusLineNC guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
-  vim.cmd("hi WinBar guifg=#d3d3d3 ctermfg=8 guibg=NONE ctermbg=NONE")
-  vim.cmd("hi WinBarNC guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
-  vim.cmd("hi NormalFloat guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
-  vim.cmd("hi FloatBorder guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
+  vim.cmd("hi WinBar guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
+  vim.cmd("hi WinBarNC guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
+  vim.cmd("hi NormalFloat guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
+  vim.cmd("hi FloatBorder guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi LineNr guifg=gray guibg=NONE ctermbg=NONE")
-  vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-  vim.cmd("hi VertSplit guibg=NONE ctermbg=NONE")
+  vim.cmd("hi Normal guifg=NONE guibg=NONE ctermbg=NONE")
+  vim.cmd("hi VertSplit guifg=NONE guibg=NONE ctermbg=NONE")
+  vim.cmd("hi NormalNC guifg=NONE guibg=NONE ctermbg=NONE")
 
 elseif vim.o.background == 'light' then
   vim.cmd("hi Normal guibg=NONE")
@@ -29,8 +29,8 @@ else
   vim.cmd("hi Normal guibg=#2E3440")
   vim.cmd("hi StatusLine guifg=white ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi StatusLineNC guifg=white ctermfg=8 guibg=NONE ctermbg=NONE")
-  vim.cmd("hi WinBar guifg=#d3d3d3 ctermfg=8 guibg=NONE ctermbg=NONE")
-  vim.cmd("hi WinBarNC guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
+  vim.cmd("hi WinBar guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
+  vim.cmd("hi WinBarNC guifg=NONE ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi NormalFloat guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi FloatBorder guifg=gray ctermfg=8 guibg=NONE ctermbg=NONE")
   vim.cmd("hi LineNr guifg=gray guibg=NONE ctermbg=NONE")
@@ -45,4 +45,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.wo.winbar = nil
   end,
 })
-
