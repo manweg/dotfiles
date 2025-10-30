@@ -14,6 +14,7 @@ if vim.o.background == 'dark' then
   vim.cmd("hi Normal guifg=NONE guibg=NONE ctermbg=NONE")
   vim.cmd("hi VertSplit guifg=NONE guibg=NONE ctermbg=NONE")
   vim.cmd("hi NormalNC guifg=NONE guibg=NONE ctermbg=NONE")
+  vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
 
 elseif vim.o.background == 'light' then
   vim.cmd("hi Normal guibg=NONE")

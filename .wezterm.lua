@@ -33,15 +33,10 @@ config.colors = {
 }
 
 -- config.color_scheme = "MaterialDark"
-
 -- config.color_scheme = "Monokai Pro (Gogh)"
--- config.color_scheme = "Monokai Pro (Gogh)"
-
 -- config.color_scheme = "Chalk"
 -- config.color_scheme = "Chalk (dark) (terminal.sexy)"
-
--- config.color_scheme = "Chalk (Gogh)"
-
+config.color_scheme = "Chalk (Gogh)"
 -- config.color_scheme = "nightfox"
 -- config.color_scheme = "nord"
 -- config.color_scheme = "Builtin Solarized Dark"
@@ -56,7 +51,7 @@ config.colors = {
 -- config.color_scheme = "Zenburn"
 -- config.color_scheme = 'Zenburn (base16)'
 -- config.color_scheme = 'zenburn (terminal.sexy)'
-config.color_scheme = 'zenwritten_dark'
+-- config.color_scheme = 'zenwritten_dark'
 -- config.color_scheme = 'Apprentice (Gogh)'
 -- config.color_scheme = 'Ashes (dark) (terminal.sexy)'
 -- config.color_scheme = 'Tango (terminal.sexy)'
