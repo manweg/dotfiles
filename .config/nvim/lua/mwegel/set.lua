@@ -112,6 +112,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- vim.opt.guicursor:append("a:blinkon0")
+-- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkon0"
+
 vim.opt.fillchars:append { eob = ' ' }
 
 -- The line beneath this is called `modeline`. See `:help modeline`

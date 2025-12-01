@@ -111,5 +111,21 @@ config.send_composed_key_when_right_alt_is_pressed = true
 -- dont ask for closing
 config.window_close_confirmation = "NeverPrompt"
 
+-- GPU-Rendering deaktivieren (manchmal schneller auf Linux)
+config.front_end = "WebGpu" -- oder "OpenGL" oder "Software" ausprobieren
+
+-- Scrollback reduzieren
+config.scrollback_lines = 10000 -- statt default 3500+
+
+-- Animation deaktivieren
+config.animation_fps = 1
+config.cursor_blink_rate = 0
+
+-- Performance-Optimierungen
+config.max_fps = 60
+
+-- Font-Shaping optimieren
+config.harfbuzz_features = {}
+
 -- and finally, return the configuration to wezterm
 return config
