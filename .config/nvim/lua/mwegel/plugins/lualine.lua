@@ -2,15 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   config = function()
-    local function filepath_from_git_root()
-      local filepath = vim.fn.expand("%:p")
-      local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-      if git_root and filepath:sub(1, #git_root) == git_root then
-        return filepath:sub(#git_root + 2)
-      end
-      return vim.fn.expand("%:~:.") -- fallback to relative path
-    end
-
     require("lualine").setup({
       options = {
         icons_enabled = false,
@@ -23,7 +14,15 @@ return {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = {
-          filepath_from_git_root,
+          {
+            "filename",
+            path = 3,
+            symbols = {
+              modified = '[modified]',
+              readonly = '[readOnly]',
+              unnamed = '[No Name]',
+            }
+          }
         },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },
