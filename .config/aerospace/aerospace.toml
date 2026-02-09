@@ -41,14 +41,9 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = true 
-
+automatically-unhide-macos-hidden-apps = true
 
 #ADDED STUFF
-#
-#
-#
-#
 #
 # Notify Sketchybar about workspace change and update icons
 exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE && ~/.config/sketchybar/plugins/update_workspace_icons.sh']
@@ -69,7 +64,11 @@ preset = 'qwerty'
 inner.horizontal = 8
 inner.vertical = 8
 outer.bottom = 5
-outer.top = [{ monitor.main = 30}, 5]
+# outer.top = [{ monitor.main = 30}, 5]
+outer.top = [
+  { monitor."Built-in Retina Display" = 0 },
+  30
+]
 outer.right = 5
 outer.left = 5
 
@@ -105,7 +104,7 @@ outer.left = 5
 
 # App shortcuts
 alt-a = 'exec-and-forget open -a /Applications/Arc.app'
-alt-o = 'exec-and-forget open -a /Applications/OBS.app/'
+# alt-o = 'exec-and-forget open -a /Applications/OBS.app/'
 alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
 alt-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
 alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']

@@ -21,6 +21,7 @@ sketchybar --bar height=25 \
 	blur_radius=25 \
 	position=top \
 	sticky=off \
+	topmost=window \
 	padding_left=10 \
 	padding_right=10 \
 	color=$BAR_COLOR
