@@ -104,7 +104,7 @@ outer.left = 5
 
 # App shortcuts
 alt-a = 'exec-and-forget open -a /Applications/Arc.app'
-# alt-o = 'exec-and-forget open -a /Applications/OBS.app/'
+alt-o = 'exec-and-forget open -a /Applications/Microsoft Outlook.app/'
 alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
 alt-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
 alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
@@ -205,6 +205,10 @@ run = ['move-node-to-workspace 5']
 [[on-window-detected]]
 if.app-id ='com.microsoft.teams2'
 run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id ='com.microsoft.outlook'
+run = ['move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-id ='com.adobe.PremierePro.24'
